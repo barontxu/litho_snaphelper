@@ -33,7 +33,6 @@ public class MainActivity extends Activity {
                 .binder(recyclerBinder)
                 .build();
 
-
         addContent(recyclerBinder, c);
         setContentView(LithoView.create(this, component));
     }

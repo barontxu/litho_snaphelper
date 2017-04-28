@@ -18,12 +18,9 @@ public class SnappedRecycler {
                 .onScrollListener(mScrollListener);
     }
 
-
-
     private static final RecyclerView.OnScrollListener mScrollListener =
             new RecyclerView.OnScrollListener() {
                 boolean mAlreadySetSnap = false;
-
 
                 @Override
                 public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
