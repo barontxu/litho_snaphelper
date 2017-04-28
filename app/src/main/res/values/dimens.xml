@@ -1,0 +1,27 @@
+<resources>
+    <!--Voice  -->
+    <dimen name="image_size">12dp</dimen>
+    <dimen name="voice_text_left_right_margin">25dp</dimen>
+    <dimen name="voice_text_size">19.5sp</dimen>
+    <dimen name="voice_text_line_extra">3dp</dimen>
+    <dimen name="voice_help_text_padding">10dp</dimen>
+
+    <dimen name="recommend_icon_size">29.7dp</dimen>
+    <dimen name="speech_help_list_item_font_size">16.5sp</dimen>
+    <dimen name="speech_help_list_item_img_marginLeft">9.7dp</dimen>
+    <dimen name="speech_help_list_item_text_marginLeft">13.5dip</dimen>
+    <dimen name="speech_help_list_item_height">49dp</dimen>
+    <dimen name="speech_help_list_divider_padding">6dip</dimen>
+    <dimen name="speech_help_list_padding_top_bottom">9dp</dimen>
+    <dimen name="speech_help_list_padding_left_right">35dp</dimen>
+    <dimen name="speech_top_arrow_min_height">25dip</dimen>
+    <dimen name="speech_top_arrow_margin_bottom">25dip</dimen>
+    <dimen name="speech_result_text_margin_top_round">106.5dp</dimen>
+    <dimen name="bluetooth_disconnected_icon_margin_top">54dp</dimen>
+    <dimen name="bluetooth_disconnected_text_margin_left_right">15dp</dimen>
+    <dimen name="bluetooth_disconnected_text1_margin_top">8.25dp</dimen>
+    <dimen name="bluetooth_disconnected_text2_margin_top">2dp</dimen>
+    <dimen name="bluetooth_disconnected_text1_size">18sp</dimen>
+    <dimen name="bluetooth_disconnected_text2_size">13.5sp</dimen>
+
+    </resources>
