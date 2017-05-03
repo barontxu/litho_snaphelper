@@ -71,13 +71,13 @@ public class TrainExpandCardFlowSpec {
     }
 
     private static void addContent(RecyclerBinder recyclerBinder, ComponentContext context) {
-        for (int i = 0; i < 32; i++) {
+        for (int i = 0; i < 3; i++) {
             recyclerBinder.insertItemAt(
                     i,
                     ComponentInfo.create()
                             .component(TrainCard.create(context)
-//                                            .clickEventHandler(
-//                                                    TrainExpandCardFlow.onClick1(context))
+                                            .clickEventHandler(
+                                                    TrainExpandCardFlow.onClick1(context))
                                             .build())
                             .build());
         }

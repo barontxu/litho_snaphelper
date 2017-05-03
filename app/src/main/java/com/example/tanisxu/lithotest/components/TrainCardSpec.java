@@ -12,6 +12,7 @@ import com.facebook.litho.annotations.LayoutSpec;
 import com.facebook.litho.annotations.OnCreateInitialState;
 import com.facebook.litho.annotations.OnCreateLayout;
 import com.facebook.litho.annotations.OnEvent;
+import com.facebook.litho.annotations.OnUpdateState;
 import com.facebook.litho.annotations.Prop;
 import com.facebook.litho.annotations.PropDefault;
 import com.facebook.litho.annotations.State;
@@ -26,23 +27,23 @@ import static com.facebook.yoga.YogaJustify.SPACE_BETWEEN;
 
 @LayoutSpec(events = { ClickEvent.class })
 public class TrainCardSpec {
-
     @PropDefault
     static final int height = 400;
 
-    @OnCreateInitialState
-    static void createInitialState(
-            ComponentContext c,
-            StateValue<Boolean> isExpanded) {
-        isExpanded.set(false);
-    }
+//    @OnCreateInitialState
+//    static void createInitialState(
+//            ComponentContext c,
+//            StateValue<Boolean> isExpanded) {
+//        isExpanded.set(false);
+//    }
 
     @OnCreateLayout
     static ComponentLayout onCreateLayout(
             ComponentContext c,
-            @Prop(optional = true) int height,
-            @State boolean isExpanded) {
-        Log.d("dsadsad", "eqweê12 " + isExpanded);
+            @Prop(optional = true) int height) {
+//            @State boolean isExpanded
+//        Log.d("dsadsad", "eqweê12 3 " + isExpanded);
+
         return Column.create(c)
                 .heightPx(height)
                 .paddingDip(VERTICAL, 8)
@@ -82,17 +83,20 @@ public class TrainCardSpec {
                                 .withLayout()
                                 .flexGrow(1)
                 )
-                .clickHandler(TrainCard.onClick(c))
+//                .clickHandler(TrainCard.onClick(c))
                 .build();
+    }
+
+    @OnUpdateState
+    static void updateExpanded(StateValue<Boolean> isExpanded) {
+        isExpanded.set(!isExpanded.get());
     }
 
     @OnEvent(ClickEvent.class)
     static void onClick(
-            ComponentContext c,
-            @State boolean isExpanded) {
-        Log.d("dsadsad", "eqweê12 " + isExpanded);
-        isExpanded = true;
-        Log.d("dsadsad", "eqweê12 " + isExpanded);
+            ComponentContext c) {
+        TrainCard.updateExpanded(c);
+//        TrainCard.updateExpandedAsync(c);
     }
 
 }

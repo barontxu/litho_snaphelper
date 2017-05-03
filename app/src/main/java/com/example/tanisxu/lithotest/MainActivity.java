@@ -2,15 +2,12 @@ package com.example.tanisxu.lithotest;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.widget.OrientationHelper;
 
 import com.example.tanisxu.lithotest.components.TrainCard;
 import com.example.tanisxu.lithotest.components.TrainExpandCardFlow;
-import com.facebook.litho.Component;
 import com.facebook.litho.ComponentContext;
 import com.facebook.litho.ComponentInfo;
 import com.facebook.litho.LithoView;
-import com.facebook.litho.widget.LinearLayoutInfo;
 import com.facebook.litho.widget.RecyclerBinder;
 
 
