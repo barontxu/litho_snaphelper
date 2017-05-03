@@ -3,17 +3,16 @@ package com.example.tanisxu.lithotest;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.widget.OrientationHelper;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 
 import com.example.tanisxu.lithotest.components.TrainCard;
+import com.example.tanisxu.lithotest.components.TrainExpandCardFlow;
 import com.facebook.litho.Component;
 import com.facebook.litho.ComponentContext;
 import com.facebook.litho.ComponentInfo;
 import com.facebook.litho.LithoView;
 import com.facebook.litho.widget.LinearLayoutInfo;
-import com.facebook.litho.widget.Recycler;
 import com.facebook.litho.widget.RecyclerBinder;
+
 
 
 public class MainActivity extends Activity {
@@ -24,17 +23,17 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         final ComponentContext c = new ComponentContext(this);
-        final RecyclerBinder recyclerBinder = new RecyclerBinder(
-                c,
-                new LinearLayoutInfo(this, OrientationHelper.VERTICAL, false));
+//        final RecyclerBinder recyclerBinder = new RecyclerBinder(
+//                c,
+//                new LinearLayoutInfo(this, OrientationHelper.VERTICAL, false));
 
-        final Component component = SnappedRecycler.create(c)
-//                .onScrollListener(mScrollListener)
-                .binder(recyclerBinder)
-                .build();
+//        final Component component = SnappedRecycler.create(c)
+//                .binder(recyclerBinder)
+//                .build();
 
-        addContent(recyclerBinder, c);
-        setContentView(LithoView.create(this, component));
+//        addContent(recyclerBinder, c);
+        setContentView(LithoView.create(this, TrainExpandCardFlow.create(c).build()));
+//        setContentView(LithoView.create(this, component));
     }
 
     private static void addContent(RecyclerBinder recyclerBinder, ComponentContext context) {
@@ -48,41 +47,41 @@ public class MainActivity extends Activity {
         }
     }
 
-    private final RecyclerView.OnScrollListener mScrollListener =
-            new RecyclerView.OnScrollListener() {
-                boolean mScrolled = false;
-                int y = 0;
-                int pos = 0;
+//
+//    public void waitFor(int millis) {
+//        final long startTime = System.currentTimeMillis();
+//        final long endTime = startTime + millis;
+//        while (System.currentTimeMillis() < endTime);
+//    }
 
-                @Override
-                public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-                    super.onScrollStateChanged(recyclerView, newState);
-
-//                    recyclerView.setOnFlingListener(new RecyclerView.OnFlingListener() {
-//                        @Override
-//                        public void fling (int velocityY)
-//                        {
-//                        }
-//                    });
-
-                    if (newState == RecyclerView.SCROLL_STATE_IDLE && mScrolled) {
-                        mScrolled = false;
-//                        snapToTargetExistingView();
-                        recyclerView.scrollBy(0, pos * 400-y);
-                        y = pos*400;
-                    }
-                }
-
-                @Override
-                public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                    if (dx != 0 || dy != 0) {
-                        Log.d("daddasd", "" + y);
-                        mScrolled = true;
-                        y += dy;
-                        pos = y / 400;
-                    }
-                }
-            };
+//    private final RecyclerView.OnScrollListener mScrollListener =
+//            new RecyclerView.OnScrollListener() {
+//                boolean mScrolled = false;
+//                int y = 0;
+//                int pos = 0;
+//
+//                @Override
+//                public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+//                    super.onScrollStateChanged(recyclerView, newState);
+//
+//                    if (newState == RecyclerView.SCROLL_STATE_IDLE && mScrolled) {
+//                        mScrolled = false;
+////                        snapToTargetExistingView();
+//                        recyclerView.scrollBy(0, pos * 400-y);
+//                        y = pos*400;
+//                    }
+//                }
+//
+//                @Override
+//                public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+//                    if (dx != 0 || dy != 0) {
+//                        Log.d("daddasd", "" + y);
+//                        mScrolled = true;
+//                        y += dy;
+//                        pos = y / 400;
+//                    }
+//                }
+//            };
 
 //    @Nullable
 //    protected LinearSmoothScroller createSnapScroller(RecyclerView.LayoutManager layoutManager, RecyclerView mRecyclerView) {
